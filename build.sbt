@@ -1,5 +1,11 @@
 import sbt.Keys._
 
+lazy val noPublish = Seq(
+  publish := {},
+  publishLocal := {},
+  publishArtifact := false
+)
+
 lazy val commonSettings = Seq(
   version := "0.1.0-SNAPSHOT",
   organization := "ru.arkoit",
@@ -15,6 +21,7 @@ lazy val commonSettings = Seq(
 lazy val root = (project in file("."))
   .aggregate(core)
   .settings(commonSettings)
+  .settings(noPublish)
   .settings(
     moduleName := "root"
   )
