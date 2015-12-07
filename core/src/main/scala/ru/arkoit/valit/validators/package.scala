@@ -12,7 +12,7 @@ package object validators {
 
   def notMoreThen[T: Ordering](k: T)(implicit ev: Ordering[T]): Validator[T] = v((a: T) => ev.compare(a, k) <= 0)
 
-  def eq[T, K](o: T): Validator[K] = v((a: K) => a == o)
+  def equalTo[T, K](o: T): Validator[K] = v((a: K) => a == o)
 
   def regex(pattern: String): Validator[String] = v((s: String) => s.matches(pattern))
 
