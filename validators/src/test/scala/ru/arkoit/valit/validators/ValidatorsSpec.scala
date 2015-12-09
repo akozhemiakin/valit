@@ -1,7 +1,7 @@
 package ru.arkoit.valit.validators
 
-import ru.arkoit.valit._
 import org.scalatest.FlatSpec
+import ru.arkoit.valit._
 
 /**
   * (c) Artyom Kozhemyakin <xenus.t@gmail.com>

@@ -19,7 +19,7 @@ lazy val commonSettings = Seq(
 )
 
 lazy val root = (project in file("."))
-  .aggregate(core)
+  .aggregate(core, validators)
   .settings(commonSettings)
   .settings(noPublish)
   .settings(
@@ -32,3 +32,10 @@ lazy val core = (project in file("core"))
   .settings(
     moduleName := "valit-core"
   )
+
+lazy val validators = (project in file("validators"))
+  .settings(commonSettings)
+  .settings(
+    moduleName := "valit-validators"
+  )
+  .dependsOn(core)
